@@ -20,7 +20,10 @@ namespace Notification.Api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                        .UseIISIntegration()
+                        .UseKestrel();
+                    
                 });
     }
 }
